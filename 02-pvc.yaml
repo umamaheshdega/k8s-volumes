@@ -32,6 +32,22 @@ spec:
     persistentVolumeClaim:
       claimName: expense-claim
 
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-LoadBalancer
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: "ebs-static-demo"
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+    nodeport: 30007
+  
+
           
           
    
