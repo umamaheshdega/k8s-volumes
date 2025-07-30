@@ -23,7 +23,7 @@ metadata:
     - name: nginx
       image: nginx
       volumeMounts:
-      - name: Persistent-storage
+      - name: persistent-storage
         mountpath: /usr/share/nginx/html
       volumes:
       - name: persistent-storage
