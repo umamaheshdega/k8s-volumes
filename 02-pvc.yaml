@@ -11,12 +11,25 @@ spec:
     requests:
       storage: 20Gi
 
-# ---
-# kind : pod
-# apiVersion: v1
-# metadata: 
-#   name: ebs-static
-#   labels:
-#     purpose: "ebs-static-demo"
-#   spec:
+---
+kind : pod
+apiVersion: v1
+metadata: 
+  name: ebs-static
+  labels:
+    purpose: "ebs-static-demo"
+  spec:
+    containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+      - name: Persistent-storage
+        mountpath: /usr/share/nginx/html
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: expense-claim
+
+          
+          
    
