@@ -1,9 +1,16 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: efs-sc
+provisioner: efs.csi.aws.com
+
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: expense-claim
 spec:
-  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  storageClassName: efs-sc # Empty string must be explicitly set otherwise default StorageClass will be set
   volumeName: expense-pv
   accessModes:
     - ReadWriteMany
