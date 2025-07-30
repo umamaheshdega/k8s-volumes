@@ -31,13 +31,13 @@ spec:
       containers:  
       - name: nginx
         image: nginx
-      volumeMounts:
+        volumeMounts:
+        - name: persistent-storage
+          mountPath: /usr/share/nginx/html
+      volumes:
       - name: persistent-storage
-        mountPath: /usr/share/nginx/html
-    volumes:
-    - name: persistent-storage
-      persistentVolumeClaim:
-        claimName: expense-claim
+        persistentVolumeClaim:
+          claimName: expense-claim
 
 ---
 kind: Service
