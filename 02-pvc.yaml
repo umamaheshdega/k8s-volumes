@@ -25,10 +25,10 @@ spec:
     volumeMounts:
     - name: persistent-storage
       mountpath: /usr/share/nginx/html
-    volumes:
-     - name: persistent-storage
-       persistentVolumeClaim:
-          claimName: expense-claim
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: expense-claim
 
           
           
