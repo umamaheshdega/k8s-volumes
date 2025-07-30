@@ -12,8 +12,8 @@ spec:
       storage: 20Gi
 
 ---
-kind : pod
 apiVersion: v1
+kind : pod
 metadata: 
   name: ebs-static
   labels:
