@@ -12,7 +12,7 @@ spec:
       storage: 25Gi
 
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind : Pod
 metadata: 
   name: ebs-static
@@ -20,7 +20,7 @@ metadata:
   purpose: ebs-static
 spec:    
   nodeSelector:
-    topology.kubernetes.io/zone: us-east-1c
+    topology.kubernetes.io/zone: us-east-1d
   containers:  
   - name: nginx
     image: nginx
