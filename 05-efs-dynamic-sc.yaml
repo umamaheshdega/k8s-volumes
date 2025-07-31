@@ -8,3 +8,5 @@ parameters:
   fileSystemId: fs-096a4bc02c6675887
   directoryPerms: "700"
   basePath: "/expense"
+  reclaimPolicy: Retain
+volumeBindingMode: Immediate
