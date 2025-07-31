@@ -29,7 +29,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: expense-claim
+      claimName: expense-dynamic-claim
 
 ---
 kind: Service
